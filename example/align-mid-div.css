@@ -1,0 +1,107 @@
+@charset "UTF-8";
+/* CSS Document */
+
+
+/*-------------------------------------------------------------------------*/
+/*	1.	Browser Reset + Font Face
+/*-------------------------------------------------------------------------*/
+html, body {
+		font-family: inherit;
+		font-weight: inherit;
+		font-style: inherit;
+		outline: 0;
+		padding: 0;
+		margin: 0;
+		border: 0;
+}
+
+
+
+
+#main {
+		margin:	0;
+		border:	0;
+		padding: 0;
+		width: 100%;
+}
+
+
+header {
+		width: 100%;
+		background-color: #eee;
+		vertical-align: middle;
+		margin: 0;
+		height: 60px;
+}
+
+nav {
+		float: right;
+		background-color: #ff0000;	
+}
+
+.logo {
+		float: left;
+		background-color: #00ff00;
+
+}
+
+.container-1 {
+		background-color: #34495e;
+		color: #fff;
+		text-align: center;
+		height: 400px;
+		width: 100%;
+
+	
+}
+
+.container-1 p {
+		position:absolute; 
+		top:50%; 
+}
+
+.container-2 {
+   		height: 10em;
+   		position: relative;              	/* 1 */
+   		background-color: #ddd;
+}   
+   
+.container-2 p {		
+   		margin: 0;							/* 2 */
+   		position: absolute;               	/* 3 */
+   		top: 50%;                         	/* 4 */
+   		transform: translateY(-50%) }   	/* 5 */
+
+.container-3 {
+   		height: 30em;
+   		position: relative;              
+   		background-color: #2980b9;
+}   
+
+.container-3 p {
+		background: black;
+		color: white;
+		border-radius: 1em;
+		padding: 1em;
+		position: absolute;
+	  	top: 50%;
+        left: 50%;
+        margin-right: -50%;					/* 6 */
+        transform: translate(-50%, -50%) 
+}
+
+/* CENTER in the MIDDLE of the DIV */
+
+/* essential rules are:
+
+1) Make the container relatively positioned, which declares it to be a container for absolutely positioned elements.
+2) To get rid off any (default) margin.
+3) Make the element itself absolutely positioned.
+4) Place it halfway down the container with 'top: 50%'. (Note that 50%' here means 50% of the height of the container.)
+5) Use a translation to move the element up by half its own height. (The '50%' in 'translate(0, -50%)' refers to the height of the element itself.)
+
+6) The 'margin-right: -50%' is needed to compensate the 'left: 50%'. The 'left' rule reduces the available width for the element by 50%. The renderer will thus try to make lines that are no longer than half the width of the container. By saying that the right margin of the element is further to the right by that same amount, the maximum line length is again the same as the container's width.
+
+Try resizing the window: You'll see that each sentence is on one line when the window is wide enough. Only when the window is too narrow for the whole sentence will the sentence be broken over several lines. When you remove the 'margin-right: -50%' and resize the window again, you'll see that the sentences will be broken already when the window is still twice as wide as the text lines.
+
+*/
